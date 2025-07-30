@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdul Basit | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+  
+    header {
+      background: #222831;
+      text-align: center;
+      padding: 100px 20px;
+      border-bottom: 1px solid #333;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+    
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      
+    }
+    section {
+      padding: 60px 30px;
+      max-width: 960px;
+      margin: 40px auto;
+     
+    }
+  h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ddd; /* Light gray for subtle separation */
+  padding-bottom: 8px;
+}
+
+    h3 {
+     
+      margin-top: 20px;
+      font-size: 1.2rem;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    a {
+     
+      text-decoration: none;
+    }
+   a {
+  position: relative;
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, #4e54c8, #8f94fb); /* Customizable gradient */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+a:hover::after {
+  transform: scaleX(1);
+}
+
+a:hover {
+  color: #4e54c8; /* Optional color change on hover */
+}
+
+   
+    
+    footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 0.9rem;
+  color: #fff;              /* Light blue with good contrast */
+  background-color:#4e6cf2;   /* White background */
+  border-top: 1px solid #d0e4f5; /* Soft blue border */
+  letter-spacing: 0.4px;
+}
+
+    
+    
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #66ccff;
+     
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    
+    .button:hover {
+      background-color: #3399cc;
+    }
+    
+      .slider-container {
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+    .card-slider {
+      display: flex;
+      gap: 20px;
+      min-width: 100%;
+      overflow-x: auto;
+      padding: 20px 0;
+    }
+  
+  
+  
+  
+  .card {
+     
+      padding: 20px;
+      min-width: 240px;
+      border-radius: 10px;
+      text-align: center;     
+      border-radius: 10px;    
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      text-align: center;
+  font-size: 0.95rem; 
+  transition: transform 0.2s ease;
+    }
+    
+ .card .sub {
+  font-size: 0.9rem;
+  font-weight: 600;       /* Makes it stand out like a subheading */
+  color: #666;            /* Dark color for emphasis */
+  letter-spacing: 0.5px;  /* Slight spacing for readability */
+  text-transform: uppercase; /* Optional: adds subheading emphasis */
+}
+    
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+   
+    .card:hover {
+  transform: scale(1.03);
+}
+   
+    .card-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    
+    .desc {
+  
+  color: #555; /* Light black / dark gray */
+}
+    .skills-category {
+  margin-top: 30px;
+}
+
+.skills-category h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  border-left: 4px solid #66ccff;
+  padding-left: 12px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.skill-card {
+  
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+}
+#contact {
+  background-color: #4e6cf2;
+  color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 16px; /* Rounded corners */
+}
+
+#contact .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#contact h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+#contact p {
+  font-size: 1rem;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+#contact a.button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 24px;
+  background-color: #ffffff;
+  color: #4e6cf2;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact a.button:hover {
+  transform: scale(1.05); /* Scale on hover */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 600px) {
+  #contact h2 {
+    font-size: 1.6rem;
+  }
+
+  #contact p {
+    font-size: 0.95rem;
+  }
+
+  #contact a.button {
+    width: 100%;
+    padding: 14px;
+  }
+}
+
+
+
+
+
+
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9fb;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 3rem;
+      background-color: #f9f9fb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #4e6cf2;
+    }
+
+    .main-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem 2rem;
+      gap: 3rem;
+    }
+
+    .text-section {
+      max-width: 500px;
+    }
+
+    .text-section h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .text-section h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .text-section p {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .contact-btn {
+      background-color: #4e6cf2;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      margin-top: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+    }
+
+    .social-icons {
+    display: flex;
+      justify-content: space-between;
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      gap: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .social-icons a {
+      color: #4e6cf2;
+      font-size: 1.2rem;
+    }
+
+    .blob-container {
+      position: relative;
+      width: 280px;
+      height: 280px;
+    }
+
+
+
+   .profile-img {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  z-index: 1;
+  top: 40px;
+  left: 40px;
+}
+
+.blob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 280px;
+  background: #4e6cf2;
+  border-radius: 58% 42% 34% 66% / 55% 38% 62% 45%;
+  z-index: 0;
+}
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+  
+    @media (max-width: 768px) {
+  .main-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text-section {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+ .social-blob-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+  .social-icons {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .blob-container {
+    margin: 0;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <header class="navbar navbar-expand-md navbar-light bg-light sticky-top px-4">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="#">Arslan Ahsen</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact Me</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+
+  <section class="main-section" id="home">
+   <div class="social-blob-wrapper">
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-github"></i></a>
+  </div>
+
+  
+<div class="blob-container">
+    <div class="blob"></div>
+    <img src="https://avatars.githubusercontent.com/u/84938477?v=4" alt="Profile" class="profile-img" />
+  </div>
+</div>
+
+    <div class="text-section">
+      <h1>Hi, I'm</h1>
+      <h2>Muhammad Arslan Ahsen</h2>
+      <p>
+        Game Development Expert<br>
+        Anchitecture Designing<br>
+        Size and performance optimization
+      </p>
+      <p>
+        Passionate about coding and crafting cross platform games that prioritize robustness, simplicity, scalability, and stability.
+      </p>
+      <button class="contact-btn">Contact Me <i class="fas fa-paper-plane"></i></button>
+    </div>
+    
+
+  </section>
+
+ 
+
+
+<section id="about" 
+>
+  <h2>About Me</h2>
+  <p>I am a dedicated Unity Game Developer with over four years of hands-on experience crafting engaging, high-performance games. My foundation as a certified software engineer and gold medalist equips me with both the technical and analytical capabilities required to tackle diverse development challenges. I have consistently excelled in collaborative, multi-developer environments, utilizing Git, GitLab, GitHub and Git Flow methodologies in both Spartans Global and Hazel Mobile to manage version control and ensure seamless team integration. My domain expertise spans multiple genres including FPS, hyper-casual, puzzle, car stunt, bus simulator, bike stunt and idle arcade games—demonstrating my adaptability across a wide range of gameplay experiences.</p>
+  <p>Specializing in FPS shooting mechanics and physics-based systems, I bring deep technical knowledge to the development of immersive and scalable gameplay. My portfolio includes conventional as well as performance-critical mobile games. I have a proven track record of diagnosing and resolving ANRs (Application Not Responding errors), crash reports, and runtime bottlenecks. My optimization skill set includes shader variant reduction, advanced texture compression techniques, sprite atlasing, and memory management—ensuring optimal balance between visual quality and runtime efficiency across varied hardware profiles.</p>
+  
+ <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin: 2rem 0;">
+  <div style="text-align: center;">
+    <span style="display: block; font-size: 2rem; font-weight: bold;">04+</span>
+    <span style="font-size: 0.95rem; color: #555;">Years <br> experience</span>
+  </div>
+  <div style="text-align: center;">
+    <span style="display: block; font-size: 2rem; font-weight: bold;">20+</span>
+    <span style="font-size: 0.95rem; color: #555;">Completed <br> project</span>
+  </div>
+  <div style="text-align: center;">
+    <span style="display: block; font-size: 2rem; font-weight: bold;">03+</span>
+    <span style="font-size: 0.95rem; color: #555;">Companies <br> worked</span>
+  </div>
+</div>
+
+</section>
+
+
+
+
+
+
+<section id="skills">
+  <h2>Skills & Technologies</h2>
+  <div class="skills-category">
+    <h3>Game Development</h3>
+    <div class="skills-grid">
+      <div class="skill-card">Unity 3D</div>
+      <div class="skill-card">C#</div>
+      <div class="skill-card">FPS Mechanics</div>
+      <div class="skill-card">Idle/Hyper-casual Design</div>
+    </div>
+  </div>
+
+  <div class="skills-category">
+    <h3>Tools & Workflows</h3>
+    <div class="skills-grid">
+      <div class="skill-card">Git & GitHub</div>
+      <div class="skill-card">Git Flow</div>
+      <div class="skill-card">Agile Development</div>
+      <div class="skill-card">Version Control</div>
+    </div>
+  </div>
+
+  <div class="skills-category">
+    <h3>Performance & Optimization</h3>
+    <div class="skills-grid">
+      <div class="skill-card">Shader Management</div>
+      <div class="skill-card">Texture Compression</div>
+      <div class="skill-card">Sprite Atlasing</div>
+      <div class="skill-card">Memory Optimization</div>
+    </div>
+  </div>
+
+  <div class="skills-category">
+    <h3>Design & UI</h3>
+    <div class="skills-grid">
+      <div class="skill-card">Responsive UI</div>
+      <div class="skill-card">Adobe Photoshop</div>
+      <div class="skill-card">Blender Basics</div>
+      <div class="skill-card">UML Diagrams</div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+    
+<section id="portfolio">
+  <h2>Portfolio Highlights</h2>
+  <div class="card-grid">
+  
+    <a href="https://play.google.com/store/apps/details?id=com.babloo.commando.adventure.shooting" target="_blank" class="card">
+      <img src="https://play-lh.googleusercontent.com/Xr3JYQQR8jyYqWgwN8f0rHhgNAsm0aGQRKg4dk_gpCZ39qFyCG1BsfRwmhoUULTlOQ=w240-h480-rw" alt="Immortal Squad" class="card-img">
+      <strong>Immortal Squad Shooter</strong><br>
+      <span class="sub">Action Shooting Game</span>
+      <p class="desc">Fast-paced FPS action game with immersive combat and tactical missions.</p>
+    </a>
+    
+    <a href="https://play.google.com/store/apps/details?id=com.jimaapps.crazycardriving.impossiblestunt.driving.simulator.games" target="_blank" class="card">
+      <img src="https://play-lh.googleusercontent.com/1euVq3VRiL4450toeHMrJDm23QRE1AS5OLDYpJhCdmf8D2sPFpDvT1cczKocirQ9Zg=w240-h480-rw" alt="Crazy Car Stunt" class="card-img">
+      <strong>Crazy Car Stunt</strong><br>
+      <span class="sub">Ramp Car Stunt Game</span>
+      <p class="desc">High-flying ramps and intense car stunt physics.</p>
+    </a>
+    
+    <a href="https://play.google.com/store/apps/details?id=com.stunt.bike.racing.tricks.master" target="_blank" class="card">
+      <img src="https://play-lh.googleusercontent.com/-owmmkffVsY9koDgS7Qoqs51Rw6q55Ip4OwrQiYItIddjYNc2muJpzV4KDJXBzcNf-zV=w240-h480-rw" alt="Bike Stunt" class="card-img">
+      <strong>Extreme Bike Stunt</strong><br>
+      <span class="sub">Extreme Ramp Stunt</span>
+      <p class="desc">Challenging bike ramps and custom stunt tracks.</p>
+    </a>
+    
+    <a href="https://play.google.com/store/apps/details?id=water.sort.color.puzzle.games.puzsort" target="_blank" class="card">
+      <img src="https://play-lh.googleusercontent.com/-tR-Xkj5A2_LWuVgLTe7Jo0z7tc2hc-8BImwbv0c-WluRciXf7oI7sxD3zGcci1zt4-m=w240-h480-rw" alt="Water Color Sort" class="card-img">
+      <strong>Water Color Sort</strong><br>
+      <span class="sub">Color Sorting Game</span>
+      <p class="desc">Relaxing color sorting puzzle with intuitive drag-and-drop.</p>
+    </a>
+    
+     <a href="https://play.google.com/store/apps/details?id=com.stickman.thief.puzzle.brain.games" target="_blank" class="card">
+      <img src="https://play-lh.googleusercontent.com/Jg3r0Sa-NVRCEFAwinsHuqhaNKDWuE6OOUIKtc65z25i1FhslNvgNXWzLxtFGpVUDoc=w240-h480-rw" alt="Thief Puzzle Games" class="card-img">
+      <strong>Thief Puzzle Games</strong><br>
+      <span class="sub">Brain Test Game</span>
+      <p class="desc">Solve creative puzzles and challenges in this quirky brain teaser.</p>
+    </a>
+    
+    <a href="https://play.google.com/store/apps/details?id=com.wood.nuts.bolts.screw.puzzle" target="_blank" class="card">
+      <img src="https://play-lh.googleusercontent.com/ozUZSlMYHzkpW8hguwJ800h6DMUB_lKkb-9olKUATdhXSJCviQjFL7aK6BPww5N1b3FF=w240-h480-rw" alt="Unscrew Puzzle" class="card-img">
+      <strong>Unscrew Puzzle</strong><br>
+      <span class="sub">Nuts & Bolts Challenge</span>
+      <p class="desc">Rotate and solve wooden screw puzzles with tricky bolt mechanics.</p>
+    </a>
+    
+    <a href="https://play.google.com/store/apps/details?id=com.offline.no.wifi.all.mini.puzzle.games" target="_blank" class="card">
+      <img src="https://play-lh.googleusercontent.com/JH7Z_hYmCdYyPdlnJoGV_EMkjr4zL5SRLPJtiEjYFyavMGST24tlpV4Nv2gvuhPQuQw=w240-h480-rw" alt="No Wifi Puzzle Games" class="card-img">
+      <strong>No Wifi: Mini Games</strong><br>
+      <span class="sub">Offline Game Collection</span>
+      <p class="desc">A bundle of mini puzzles to enjoy anytime without internet.</p>
+    </a>
+    <a href="https://play.google.com/store/apps/details?id=com.goodsmaster3d.triple.match.sort.puzzle" target="_blank" class="card">
+      <img src="https://play-lh.googleusercontent.com/R3U1_akJ8nMtgsY8QmC7SGCljnG8FLQ2d5Z1WT7zI8EfCZrgz8K-OvbSv890FV8czw=w240-h480-rw" alt="Triple Match Goods" class="card-img">
+      <strong>Triple Match Goods Puzzle</strong><br>
+      <span class="sub">Sorting & Matching Game</span>
+      <p class="desc">Match triple items and clear the board in this colorful 3D puzzle.</p>
+    </a>
+    
+    <a href="https://play.google.com/store/apps/details?id=com.bubble.buster2048.ball.shooter.game" target="_blank" class="card">
+        <img src="https://play-lh.googleusercontent.com/bJP5OKYViANlUsAuYZ6gAiqdACIMS2gO_5MhoLm8d3wUeDQh52Xm2r8e4PYQdy91sBI=w240-h480-rw" alt="Triple Match Goods" class="card-img">
+      <strong>Bubble Buster 2048</strong><br>
+      <span class="sub">Bubble Merge Game</span>
+      <p class="desc">Pop and merge bubbles in this hybrid arcade puzzle game.</p>
+    </a>
+    
+    <a href="https://play.google.com/store/apps/details?id=ball.sort.color.match.puzzle.games" target="_blank" class="card">
+      <img src="https://play-lh.googleusercontent.com/oxgyoS8bxOzWz1N_c2cJhxjmjzGh70lrQXj-EsQFQQr8-lAyL8z7sd76ajnGopuWajU=w240-h480-rw" alt="Triple Match Goods" class="card-img">
+      <strong>Ball Sort: Color Puzzle Games</strong><br>
+      <span class="sub">Sorting Puzzle Game</span>
+      <p class="desc">Sort colored balls in tubes using logic and strategy.</p>
+    </a>
+    
+    <a href="https://play-lh.googleusercontent.com/bJP5OKYViANlUsAuYZ6gAiqdACIMS2gO_5MhoLm8d3wUeDQh52Xm2r8e4PYQdy91sBI=w240-h480-rw"  target="_blank" class="card">
+      <img src="https://play-lh.googleusercontent.com/TqiAMhdlkBNRsBV2j6O_1IoJseFIT13JS9wMEy8zpavXPXt7CPx5LY84Br0QSB2sZg=w240-h480-rw" alt="Find the Difference" class="card-img">
+      <strong>Find the Difference</strong><br>
+      <span class="sub">Spot Fun Differences</span>
+      <p class="desc">Spot the differences in stunning illustrations and sharpen your eye.</p>
+    </a>
+ <a href="https://play.google.com/store/apps/details?id=sudoku.puzzle.free.brain.number.game&hl=en" target="_blank" class="card">
+      <img src="https://play-lh.googleusercontent.com/NMp0kV7HDOrTSGFNoUG281FBqBU9NDZOu53SgeQaRs8AXSrQ9zTgmPoksc5rMKORfdo=w240-h480-rw" alt="Classic Sudoku" class="card-img">
+      <strong>Classic Sudoku</strong><br>
+      <span class="sub">Number Puzzle Game</span>
+      <p class="desc">Spot the differences in stunning illustrations and sharpen your eye.</p>
+    </a>
+   
+  </div>
+</section>
+
+
+
+<section id="contact">
+  <div class="container">
+    <h2>Get in Touch</h2>
+    <p>I’m open to freelance work, collaborations, and game development roles. Let’s talk!</p>
+    <p>Email: <a href="mailto:arslanahsen6262@outlook.com">arslanahsen6262@outlook.com</a></p>
+    <p>Phone: 0308-5318962</p>
+    <a class="button" href="Arslan%20Ahsen%20(Unity%20Developer).pdf" download>Download My Resume (PDF)</a>
+  </div>
+</section>
+
+
+<footer>
+  <p>&copy; 2025 Muhammad Arslan Ahsen — Built with passion and Unity.</p>
+</footer>
+</body>
+
+</html>
